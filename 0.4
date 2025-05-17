@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant browser
+    participant server
+    browser ->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    server-->>browser: sends the code for the notes box and the submit
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    server-->>browser: sends the css file
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    server-->>browser: sends the main.js code
+
+    
+    browser->>server: https://studies.cs.helsinki.fi/exampleapp/data.json
+    server-->>browser: sends all the notes, including the one just added by the user.
+
